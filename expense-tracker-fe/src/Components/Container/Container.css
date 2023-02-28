@@ -1,0 +1,9 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box; 
+    width: 100vw;
+    height: calc(100vh - 90px);
+    background-color: brown;
+    min-height: 600px;
+}

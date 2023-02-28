@@ -1,0 +1,9 @@
+.navbar {
+    border: 1px solid red;
+    box-sizing: border-box;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    min-width: 1500px;
+}

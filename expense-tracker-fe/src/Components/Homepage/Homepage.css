@@ -1,0 +1,8 @@
+.homepage {
+    height: 100%;
+    box-sizing: border-box;
+    background-color:aliceblue;
+    width: 100%;
+    padding: 40px 50px;
+    border: 1px solid;
+}

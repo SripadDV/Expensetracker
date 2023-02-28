@@ -1,0 +1,10 @@
+.logo {
+    width: 10%;
+    /*border: 1px solid blue;*/
+    box-sizing: border;
+    justify-content: center;
+    align-items: center;
+    text-align:  center;
+    background-color: #c5d5c5;
+
+}
