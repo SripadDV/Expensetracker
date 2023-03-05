@@ -1,6 +1,7 @@
 package com.expense_tracker.backend.service;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,10 +17,19 @@ public class ExpenseServiceImpl implements ExpenseService {
 	@Autowired
 	private ExpenseRepo expenseRepo;
 	
+	@Autowired
+	private CategoryService categoryService;
+	
+	@Autowired
+	private PaymentChannelService paymentChannelService;
+	
 	@Override
 	public Expense addExpense(Expense expense) {
 		Expense savedExpense = this.expenseRepo.save(expense);
+		this.categoryService.addCategory(expense.getCategory());
+		this.paymentChannelService.addPaymentChannel(expense.getPaymentChannel());
 		return savedExpense;
+		
 	}
 
 	@Override
@@ -35,9 +45,9 @@ public class ExpenseServiceImpl implements ExpenseService {
 	}
 
 	@Override
-	public List<Expense> getExpense() {
+	public List<Expense> getMonthlyExpense(int month, int year) {
 		
-		List<Expense> expenses = this.expenseRepo.findAll();
+		List<Expense> expenses = this.expenseRepo.findByMonth(month, year);
 		return expenses;
 	}
 
@@ -45,6 +55,12 @@ public class ExpenseServiceImpl implements ExpenseService {
 	public List<MonthlyCategoryExpense> getMontlyCategoryExpense(int month, int year) {
 		List<MonthlyCategoryExpense> monthlyCategoryExpense = this.expenseRepo.findByMonthCategory(month, year);
 		return monthlyCategoryExpense;
+	}
+
+	@Override
+	public List<Expense> getCustomPeriodExpense(Date fromDate, Date toDate) {
+		List<Expense> customPeriodExpense =  this.expenseRepo.findByCustomPeriod(fromDate, toDate);
+		return customPeriodExpense;
 	}
 
 }

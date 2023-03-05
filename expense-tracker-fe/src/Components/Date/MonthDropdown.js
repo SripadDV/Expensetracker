@@ -15,9 +15,11 @@ const MonthDropdown = (props) => {
     "November",
     "December",
   ];
-  const [month, setMonth] = useState(new Date().getMonth());
 
   const upliftMonth = props.upliftMonth;
+  const initialMonth = props.initialMonth;
+  const [month, setMonth] = useState(initialMonth ?? new Date().getMonth());
+
   const handleMonth = (e) => {
     upliftMonth(Number(e.target.value));
     setMonth(e.target.value);
@@ -25,17 +27,20 @@ const MonthDropdown = (props) => {
   };
 
   return (
-    <select
-      value={month}
-      onChange={handleMonth}
-      style={{ width: "150px", height: "25px", fontSize: "medium" }}
-    >
-      {months.map((month, index) => (
-        <option key={index} value={index}>
-          {month}
-        </option>
-      ))}
-    </select>
+    <label>
+      Month: {"   "}
+      <select
+        value={month}
+        onChange={handleMonth}
+        style={{ width: "110px", height: "25px", fontSize: "medium" }}
+      >
+        {months.map((month, index) => (
+          <option key={index} value={index}>
+            {month}
+          </option>
+        ))}
+      </select>
+    </label>
   );
 };
 

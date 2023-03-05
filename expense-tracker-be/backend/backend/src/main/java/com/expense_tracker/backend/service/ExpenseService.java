@@ -1,5 +1,6 @@
 package com.expense_tracker.backend.service;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -13,6 +14,7 @@ public interface ExpenseService {
 	Expense addExpense(Expense expense);
 	Expense updateExense(Expense expense);
 	void deleteExpense(int id);
-	List<Expense> getExpense();
+	List<Expense> getMonthlyExpense(int month, int year);
 	List<MonthlyCategoryExpense> getMontlyCategoryExpense(int month, int year);
+	List<Expense> getCustomPeriodExpense(Date fromDate, Date toDate);
 }

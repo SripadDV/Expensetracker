@@ -21,7 +21,7 @@ import lombok.NoArgsConstructor;
 public class Expense {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	
 	@Column(name="title")
@@ -39,17 +39,17 @@ public class Expense {
 	@Column(name="tag")
 	private String tag;
 	
-	@Column(name="paymentMethod")
-	private String paymentMethod;
+	@Column(name="paymentChannel")
+	private String paymentChannel;
 
-	public Expense(int id, String title, double amount, String category, String tag, String paymentMethod) {
+	public Expense(int id, String title, double amount, String category, String tag, String paymentChannel) {
 		super();
 		this.id = id;
 		this.title = title;
 		this.amount = amount;
 		this.category = category;
 		this.tag = tag;
-		this.paymentMethod = paymentMethod;
+		this.paymentChannel = paymentChannel;
 	}
 	
 

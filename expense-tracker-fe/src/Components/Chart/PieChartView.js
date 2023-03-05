@@ -69,13 +69,10 @@ const PieChartView = (props) => {
         display: "flex",
         flexDirection: "row",
         margin: "30px 0px",
+        justifyContent: "center",
       }}
     >
-      <PieChart
-        width={600}
-        height={500}
-        style={{ border: "1px solid", padding: "10px" }}
-      >
+      <PieChart width={600} height={500} style={{ padding: "10px" }}>
         <Pie
           data={data}
           nameKey="category"

@@ -1,0 +1,42 @@
+.viewExpense {
+    height: 100%;
+    box-sizing: border-box;
+    background-color: aliceblue;
+    width: 100%;
+    padding: 40px 50px;
+    /*border: 1px solid;*/  
+}
+
+
+.viewFilters {
+        display: flex;
+        flex-direction: row;
+            /*border: "1px solid",*/
+        width: 100%;
+        /*border: 1px solid;*/
+        box-sizing: border-box;
+}
+
+.title {
+    width: 20%
+}
+
+.amount {
+    width: 15%
+}
+
+.date {
+    width: 10%
+}
+
+.category {
+    width: 20%;
+}
+
+.tag {
+    width: 15%;
+}
+
+.paymentChannel {
+    width: 20%;
+}

@@ -86,7 +86,7 @@ const Homepage = () => {
           flexDirection: "row",
           /*border: "1px solid",*/
           justifyContent: "space-between",
-          width: "300px",
+          width: "350px",
         }}
       >
         <MonthDropdown upliftMonth={setMonth} />

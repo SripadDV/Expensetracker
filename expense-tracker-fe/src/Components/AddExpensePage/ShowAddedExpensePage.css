@@ -1,0 +1,14 @@
+table, td, th {
+    width: 40%;
+    text-align: left;
+    border: 1px solid;
+}
+
+table, tr {
+    height: 20%;
+    border: 1px solid;
+}
+
+button:hover {
+    cursor: pointer;
+}

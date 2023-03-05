@@ -1,0 +1,12 @@
+.ant-table-tbody>tr>td {
+    border: none
+}
+
+.ant-table-thead>tr>th {
+    border: none
+}
+
+.ant-table-content > table {
+    border-radius: 8px;
+}
+
